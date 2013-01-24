@@ -30,6 +30,10 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;; ;; Temporarily highlights things like just-yanked text.
+;; (require 'volatile-highlights)
+;; (volatile-highlights-mode 1)
+
 (require 'python)
 (defun silent-python-check ()
   "Like python-check, but doesn't bug me to confirm the command each time."
@@ -43,6 +47,23 @@
   "nothing"
   (interactive))
 (global-set-key "\C-x\C-g" 'nop)
+
+;; ; 't -> copy/paste with primary x11 copy buffer
+(setq x-select-enable-primary 't)
+
+;; https://github.com/capitaomorte/yasnippet
+;; (setq yas/root-directory "~/stuff/emacs/yasnippets")
+;; (setq yas/trigger-key [\C-,])
+;; (yas/initialize)
+;; (yas/load-directory yas/root-directory)
+
+;; Show path info in otherwise identical filenames
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
+
+;; remember last place in each file
+(setq-default save-place t)
+(require 'saveplace)
 
 ; http://emacs.wordpress.com/2007/01/16/quick-and-dirty-code-folding/
 (defun jao-toggle-selective-display (column)
@@ -487,6 +508,16 @@ act like (other-window -1)."
 (setq vhdl-indent-tabs-mode t)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;http://younix.us/cgit/cgit.cgi/dhd.git/tree/hbase/.emacs
+; sprunge.us owns
+;; (defun sprunge (prefix)
+;;   "Posts the current buffer to sprunge, and shows the resulting URL in a new buffer"
+;;   (interactive "P")
+;;   (let ((filename "/tmp/sprunge-post"))
+;;     (if prefix (write-file filename) (write-region (region-beginning) (region-end) filename)) ; if invoked with the universal argument / prefix, upload the whole file, else upload just the region
+;;     (insert (shell-command-to-string (concat "curl -s -F 'sprunge=<" filename "' http://sprunge.us")))
+;;     (delete-char -1))) ; Newline after URL
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
