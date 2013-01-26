@@ -226,7 +226,7 @@
 ; C-x 1 deletes windows only vertically, so as not to mess up nice horz splits
 (global-set-key "\C-x1"    'delete-other-windows-vertically)
 (global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-l" 'sort-lines)
+(global-set-key [?\C-,] 'sort-lines)
 (global-set-key "\C-ca"    'align-regexp)
 (global-set-key "\C-cr"    'query-replace-regexp)
 (global-set-key "\C-cf"    'flyspell-buffer-or-region)
