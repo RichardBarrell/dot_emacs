@@ -16,7 +16,6 @@
 
 (require 'cl)
 (require 'tls)
-(require 'erc)
 (require 'lorem-ipsum)
 (require 'misc)
 (require 'whitespace)
@@ -133,39 +132,6 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq require-final-newline t)
-
-(setq erc-auto-query 'buffer)
-
-(defun erc-notify-for-vanity (proc parsed)
-  (let ((nick (car (erc-parse-user (erc-response.sender parsed))))
-        (target (car (erc-response.command-args parsed)))
-        (msg (erc-response.contents parsed))
-		(current-nick (erc-current-nick)))
-    (when (or
-           (erc-current-nick-p target)
-           (string-match-p current-nick msg)
-		   (string-match-any-p erc-keywords msg))
-      (notify nick msg))
-    nil))
-
-(defun string-match-any-p (patterns string)
-  (if (null patterns) nil
-	(if (string-match-p (car patterns) string) t
-	  (string-match-any-p (cdr patterns) string))))
-
-(defun erc-screaming-invite (proc parsed)
-  (let ((target (first (erc-response.command-args parsed)))
-        (chnl (erc-response.contents parsed)))
-    (multiple-value-bind (nick login host)
-        (erc-parse-user (erc-response.sender parsed))
-	  (notify chnl (format "Invited to %s by %s on %s." chnl nick host)))))
-
-(setq erc-server-PRIVMSG-functions (cons 'erc-notify-for-vanity
-                                         erc-server-PRIVMSG-functions))
-(setq erc-server-INVITE-functions (cons 'erc-screaming-invite
-										erc-server-INVITE-functions))
-(setq erc-server-NOTICE-functions (cons 'erc-notify-for-vanity
-                                        erc-server-NOTICE-functions))
 
 (ispell-minor-mode t)
 
@@ -438,8 +404,6 @@ act like (other-window -1)."
 
 (setq inhibit-startup-message t)
 
-(setq erc-fill-column 79)
-
 (add-hook 'sgml-mode-hook (lambda ()
 			    (setq Lorem-ipsum-paragraph-separator "<br /><br />\n"
 				  Lorem-ipsum-sentence-separator "&nbsp;&nbsp;"
@@ -447,17 +411,6 @@ act like (other-window -1)."
 				  Lorem-ipsum-list-bullet "<li>"
 				  Lorem-ipsum-list-item-end "</li>\n"
 				  Lorem-ipsum-list-end "</ul>\n")))
-
-;(make-variable-buffer-local 'erc-fill-column)
-;(add-hook 'window-configuration-change-hook 
-;   '(lambda ()
-;      (save-excursion
-;        (walk-windows
-;	 (lambda (w)
-;	   (let ((buffer (window-buffer w)))
-;	     (set-buffer buffer)
-;	     (when (eq major-mode 'erc-mode)
-;	       (setq erc-fill-column (- (window-width w) 2)))))))))
 
 (ispell-minor-mode t)
 (setq-default tab-width 4)
@@ -484,19 +437,6 @@ act like (other-window -1)."
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "/usr/bin/chromium-browser" t)
  '(compilation-ask-about-save nil)
- '(erc-autojoin-channels-alist (quote (("freenode.net" "##freebsd" "#PloneConf" "#centos" "#fedora" "#fedora-haskell" "#haskell" "#haskell-game" "#haskell-in-depth" "#haskell-overflow" "#haskell-web" "#nginx" "#plone" "#postgresql" "#zope") ("Nightstar.Net" "#code" "#nightstar_bar" "#tsc"))))
- '(erc-email-userid "richardb")
- '(erc-interpret-mirc-color t)
- '(erc-join-buffer (quote bury))
- '(erc-keywords (quote ("Richard" "\\bfire\\b" "\\bpub\\b" "\\bcider\\b" "\\bbeer\\b" "\\bbees\\b" "\\bcake\\b" "\\bdeath\\b" "\\bcage\\b")))
- '(erc-log-channels-directory "~/.erc/logs/")
- '(erc-modules (quote (autoaway autojoin button completion dcc fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify readonly ring stamp spelling track)))
- '(erc-nick "RichardB")
- '(erc-nick-uniquifier "_")
- '(erc-paranoid t)
- '(erc-timestamp-format "[%H:%M:%S]")
- '(erc-timestamp-format-right " [%H:%M:%S]")
- '(erc-user-full-name "Richard Barrell")
  '(explicit-shell-file-name "/bin/bash")
  '(indent-tabs-mode t)
  '(js2-auto-indent-p t)
