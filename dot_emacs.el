@@ -212,6 +212,12 @@
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
 
+(defun edit-my-dot-emacs ()
+  (interactive)
+  (find-file "/home/richardb/stuff/emacs/dot_emacs.el"))
+(global-set-key [?\C-\:] 'edit-my-dot-emacs)
+
+
 ;(global-unset-key "\C-z")
 ;(global-set-key "\C-z\C-s" 'isearch-forward-regexp)
 ;(global-set-key "\C-z\C-r" 'isearch-backward-regexp)
