@@ -364,7 +364,7 @@
 (defun tf-toggle-tab-width-setting ()
     "Toggle setting tab widths between 4 and 8"
     (interactive)
-    (setq tab-width (if (= tab-width 2) 8 (/ tab-width 2)))
+    (setq tab-width (if (= tab-width 4) 8 (/ tab-width 2)))
     (setq c-basic-offset tab-width)
     (setq sgml-basic-offset tab-width)
     (message "Set tab-width and (c|sgml)-basic-offset to %d." tab-width)
@@ -423,8 +423,8 @@ act like (other-window -1)."
 				  Lorem-ipsum-list-end "</ul>\n")))
 
 (ispell-minor-mode t)
-(setq-default tab-width 4)
-(setq indent-tabs-mode nil)
+(setq-default tab-width 8)
+(setq-default indent-tabs-mode nil)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
