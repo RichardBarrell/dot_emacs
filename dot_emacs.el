@@ -143,6 +143,10 @@
 
 (setq-default indent-tabs-mode nil)
 
+(add-hook 'rst-mode-hook
+  '(lambda ()
+	 (setq indent-tabs-mode nil)))
+
 (show-paren-mode t)
 (setq make-backup-files nil)
 
