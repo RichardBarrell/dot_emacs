@@ -324,7 +324,7 @@
 (defun my-js2-mode-hook ()
   (require 'espresso)
   (setq espresso-indent-level 4
-        indent-tabs-mode t
+        indent-tabs-mode nil
         c-basic-offset 4)
   (c-toggle-auto-state 0)
   (c-toggle-hungry-state 1)
