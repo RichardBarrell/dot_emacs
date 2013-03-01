@@ -212,6 +212,7 @@
 (global-set-key [?\C-~]    'compare-windows)
 (global-set-key "\C-c\C-k" 'zap-spaces)
 (global-set-key "\M-+"     'describe-char)
+(global-set-key "\C-ck"    'delete-trailing-whitespace)
 
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
