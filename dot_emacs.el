@@ -423,7 +423,10 @@ act like (other-window -1)."
 				  Lorem-ipsum-list-item-end "</li>\n"
 				  Lorem-ipsum-list-end "</ul>\n")))
 
+(add-hook 'c-mode-hook (lambda () (setq c-basic-offset-4)))
+
 (ispell-minor-mode t)
+(setq-default c-basic-offset 4)
 (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
 
@@ -449,7 +452,7 @@ act like (other-window -1)."
  '(browse-url-generic-program "/usr/bin/chromium-browser" t)
  '(compilation-ask-about-save nil)
  '(explicit-shell-file-name "/bin/bash")
- '(indent-tabs-mode t)
+ '(indent-tabs-mode nil)
  '(js2-auto-indent-p t)
  '(js2-bounce-indent-p t)
  '(js2-cleanup-whitespace t)
