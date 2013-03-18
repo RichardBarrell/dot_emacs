@@ -402,7 +402,15 @@ act like (other-window -1)."
   (shell)
   (rename-buffer n))
 
-(global-set-key "\C-x!" 'named-shell)
+(defun named-shell-in-directory (dirname)
+  "Open a shell in a directory."
+  (interactive "DDirectory: ")
+  (let* ((newbuf (generate-new-buffer dirname)))
+    (switch-to-buffer newbuf)
+    (shell newbuf)))
+
+(global-set-key [?\C-x ?!] 'named-shell)
+(global-set-key [?\C-x ?\"] 'named-shell-in-directory)
 
 (require 'buffer-move)
 (global-set-key (kbd "<C-S-up>")     'buf-move-up)
