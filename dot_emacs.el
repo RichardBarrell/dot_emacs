@@ -402,11 +402,24 @@ act like (other-window -1)."
   (shell)
   (rename-buffer n))
 
+(defun string/ends-with (s ending)
+  "return non-nil if string S ends with ENDING."
+  (let ((elength (length ending)))
+    (string= (substring s (- 0 elength)) ending)))
+
+(defun string/starts-with (s arg)
+  "returns non-nil if string S starts with ARG.  Else nil."
+  (cond ((>= (length s) (length arg))
+         (string-equal (substring s 0 (length arg)) arg))
+        (t nil)))
+
 (defun named-shell-in-directory (dirname)
   "Open a shell in a directory."
   (interactive "DDirectory: ")
-  (let* ((newbuf (generate-new-buffer dirname)))
+  (let* ((sdname (if (string/ends-with dirname "/") dirname (concat dirname "/")))
+         (newbuf (generate-new-buffer sdname)))
     (switch-to-buffer newbuf)
+    (cd sdname)
     (shell newbuf)))
 
 (global-set-key [?\C-x ?!] 'named-shell)
