@@ -444,7 +444,7 @@ act like (other-window -1)."
 
 (ispell-minor-mode t)
 (setq-default c-basic-offset 4)
-(setq-default tab-width 8)
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
