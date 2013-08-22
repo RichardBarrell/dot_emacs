@@ -417,6 +417,11 @@ act like (other-window -1)."
     (cd sdname)
     (shell newbuf)))
 
+(defun kerbal-blat-tiny-nums ()
+  "Blat numbers < 1E-05 to zero. Most commonly used on .craft files."
+  (interactive)
+  (query-replace-regexp "-?[0-9.]+E-0[6-9]" "0"))
+
 (global-set-key [?\C-x ?!] 'named-shell)
 (global-set-key [?\C-x ?\"] 'named-shell-in-directory)
 
