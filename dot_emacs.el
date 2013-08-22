@@ -29,9 +29,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; ;; Temporarily highlights things like just-yanked text.
-;; (require 'volatile-highlights)
-;; (volatile-highlights-mode 1)
+;; Temporarily highlights things like just-yanked text.
+(require 'volatile-highlights)
+(volatile-highlights-mode 1)
 
 (require 'python)
 (defun silent-python-check ()
