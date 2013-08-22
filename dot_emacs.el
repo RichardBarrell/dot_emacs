@@ -368,7 +368,7 @@
     (message "Set tab-width and c-basic-offset to %d." tab-width)
     (redraw-display))
 
-(setq sgml-basic-offset 2)
+(setq sgml-basic-offset 4)
 (global-set-key (kbd "M-#") 'tf-toggle-tab-width-setting)
 
 (defun reverse-other-window (&optional arg)
