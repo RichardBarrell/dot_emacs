@@ -350,6 +350,8 @@
 ;  (moz-minor-mode 1))
 
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.cpy$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.cpt$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.zpt$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
 
