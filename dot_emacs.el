@@ -344,7 +344,7 @@
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
 
-(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
+;(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
 ;(add-hook 'js2-mode-hook 'js2-custom-setup)
 ;(defun js2-custom-setup ()
 ;  (moz-minor-mode 1))
