@@ -446,6 +446,7 @@ act like (other-window -1)."
 				  Lorem-ipsum-list-end "</ul>\n")))
 
 (add-hook 'c-mode-hook (lambda () (setq c-basic-offset-4)))
+(add-hook 'shell-mode-hook (lambda () (setq tab-width 8)))
 
 (ispell-minor-mode t)
 (setq-default c-basic-offset 4)
