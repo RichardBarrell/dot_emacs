@@ -424,8 +424,9 @@ act like (other-window -1)."
   (interactive)
   (query-replace-regexp "-?[0-9.]+E-0[6-9]" "0"))
 
-(global-set-key [?\C-x ?!] 'named-shell)
+(global-set-key [?\C-x ?!] 'shell)
 (global-set-key [?\C-x ?\"] 'named-shell-in-directory)
+(global-set-key (kbd "C-x £") 'named-shell)
 
 (require 'buffer-move)
 (global-set-key (kbd "<C-S-up>")     'buf-move-up)
