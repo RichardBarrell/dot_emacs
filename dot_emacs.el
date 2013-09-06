@@ -419,12 +419,17 @@ act like (other-window -1)."
     (cd sdname)
     (shell newbuf)))
 
+(defun shell-named-after-here ()
+  "Open a shell in current directory, named after it."
+  (interactive)
+  (named-shell-in-directory default-directory))
+
 (defun kerbal-blat-tiny-nums ()
   "Blat numbers < 1E-05 to zero. Most commonly used on .craft files."
   (interactive)
   (query-replace-regexp "-?[0-9.]+E-0[6-9]" "0"))
 
-(global-set-key [?\C-x ?!] 'shell)
+(global-set-key [?\C-x ?!] 'shell-named-after-here)
 (global-set-key [?\C-x ?\"] 'named-shell-in-directory)
 (global-set-key (kbd "C-x £") 'named-shell)
 
