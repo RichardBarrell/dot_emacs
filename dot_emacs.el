@@ -40,7 +40,20 @@
   (python-check (concat python-check-command " " (buffer-file-name))))
 
 (add-hook 'python-mode-hook
-  '(lambda() (local-set-key "\C-c\C-w" 'silent-python-check)))
+  '(lambda() (progn
+               (local-set-key "\C-c\C-w" 'silent-python-check)
+               (local-set-key (kbd "<f7>") 'python-insert-pdb)
+              )))
+
+(defun python-insert-pdb ()
+  (interactive)
+  (progn
+    (move-beginning-of-line nil)
+    (newline)
+    (backward-char)
+    (indent-for-tab-command)
+    (insert "import pdb; pdb.set_trace()")
+    (forward-char)))
 
 (defun nop ()
   "nothing"
