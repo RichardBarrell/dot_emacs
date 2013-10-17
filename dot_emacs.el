@@ -516,7 +516,7 @@ act like (other-window -1)."
  '(py-pychecker-command-args (quote ("")))
  '(python-check-command "/home/richardb/bin/pychecker")
  '(scroll-conservatively 15)
- '(tab-width 4)
+ '(tab-width 8)
  '(term-scroll-to-bottom-on-output nil)
  '(visible-bell t))
 
