@@ -27,6 +27,7 @@
 (require 'grep)
 (require 'rainbow-mode)
 (require 'undo-tree)
+(require 'column-marker)
 (global-undo-tree-mode)
 
 ;; Temporarily highlights things like just-yanked text.
