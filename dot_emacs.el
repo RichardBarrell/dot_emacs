@@ -164,6 +164,10 @@
 (show-paren-mode t)
 (setq make-backup-files nil)
 
+(add-to-list 'backup-directory-alist
+             (cons tramp-file-name-regexp nil))
+(setq tramp-auto-save-directory "/home/richardb/.tramp")
+
 (require 'fliptext)
 (require 'zenburn)
 (eval-after-load "zenburn" '(zenburn))
