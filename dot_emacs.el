@@ -391,7 +391,6 @@
 (add-to-list 'auto-mode-alist '("\\.cpt$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.zpt$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
-
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 
 (setq browse-url-generic-program (executable-find "firefox")
@@ -522,14 +521,15 @@ act like (other-window -1)."
 ;;     (delete-char -1))) ; Newline after URL
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ansi-color-for-comint-mode t)
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "/usr/bin/chromium-browser" t)
  '(compilation-ask-about-save nil)
+ '(eval-expression-print-length nil)
  '(explicit-shell-file-name "/bin/bash")
  '(indent-tabs-mode nil)
  '(js2-auto-indent-p t)
