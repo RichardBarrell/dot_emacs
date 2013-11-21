@@ -107,6 +107,9 @@
 (defvar css-mode-syntax-table nil
   "Syntax table for `css-mode'.")
 
+(defvar css-mode-hook nil
+  "Hook called by `css-mode'.")
+
 (defun css-mode ()
   "Major mode for editing Cascading StyleSheets."
   (interactive)
@@ -141,7 +144,8 @@
   (setq indent-line-function 'css-mode-indent-line)
   (setq font-lock-defaults '((css-mode-font-lock-keywords
                               css-mode-font-lock-keywords-1
-                              css-mode-font-lock-keywords-2))))
+                              css-mode-font-lock-keywords-2)))
+  (run-hooks 'css-mode-hook))
 
 ;; set up keymap
 (if css-mode-map

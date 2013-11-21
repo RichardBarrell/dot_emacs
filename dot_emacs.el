@@ -159,7 +159,26 @@
 
 (add-hook 'rst-mode-hook
   '(lambda ()
-	 (setq indent-tabs-mode nil)))
+     (setq indent-tabs-mode t)))
+
+(add-hook 'css-mode-hook
+  '(lambda ()
+     (setq indent-tabs-mode t)
+     (setq tab-width 4)
+     (setq c-basic-offset 4)
+     (rainbow-turn-on)
+     ))
+
+(add-hook 'html-mode-hook
+  '(lambda ()
+     (local-set-key "\C-c1" 'firefox-this-buffer)
+     ))
+
+(defun firefox-this-buffer ()
+  (interactive)
+  (cond
+   ((buffer-file-name) (shell-command (concat "firefox " (buffer-file-name))))
+   ))
 
 (show-paren-mode t)
 (setq make-backup-files nil)
