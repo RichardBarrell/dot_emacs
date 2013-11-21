@@ -228,6 +228,22 @@
 ; Most controversial keybinding thus far:
 (global-set-key "\C-x\C-c" 'kill-completions)
 
+; this sucks but uh look over there, it's a distraction!
+(defun irc-rainbow (start end)
+  (interactive "r")
+  (if mark-active
+    (save-excursion
+      (goto-char start)
+      (let ((rainbow-list '#1=("04" "07" "08" "03" "02" "06". #1#)))
+        (loop for i from 0 to (- end start) do
+              (if (not (eq (char-after) 32))
+                  (progn
+                    (insert "")
+                    (insert (car rainbow-list))
+                    (insert ",01")
+                    (setq rainbow-list (cdr rainbow-list))))
+              (forward-char))))))
+
 ; http://steve.yegge.googlepages.com/effective-emacs :)
 (global-set-key "\C-w"     'backward-kill-more-word)
 ; C-x 1 deletes windows only vertically, so as not to mess up nice horz splits
