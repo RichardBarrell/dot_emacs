@@ -14,11 +14,9 @@
 
 (require 'cl)
 (require 'tls)
-(require 'lorem-ipsum)
 (require 'misc)
 (require 'whitespace)
 (require 'flymake)
-(require 'notify)
 (require 'css-mode)
 (require 'cycle-buffer)
 (require 'ssh)
