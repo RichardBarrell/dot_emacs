@@ -1,10 +1,8 @@
 ;; (find-file "~/.plan")
 ;; (org-mode)
 
-(setq load-path (cons "/home/richardb/stuff/share/emacs/site-lisp" load-path))
-;(load-file "/home/richardb/stuff/ProofGeneral/generic/proof-site.el")
-;(setq load-path (cons "/usr/share/emacs23/site-list/php-elisp" load-path)
-(setq load-path (cons "/home/richardb/stuff/emacs" load-path))
+(setq load-path (cons (expand-file-name "~/stuff/emacs") load-path))
+
 ;(defun my-custom-proof-keys () (interactive)(local-set-key (kbd "C-M-RET") 'proof-assert-until-point-interactive))
 ;(add-hook 'proof-mode-hook 'my-custom-proof-keys)
 
@@ -275,7 +273,7 @@
 
 (defun edit-my-dot-emacs ()
   (interactive)
-  (find-file "/home/richardb/stuff/emacs/dot_emacs.el"))
+  (find-file (expand-file-name "~/stuff/emacs/dot_emacs.el")))
 (global-set-key [?\C-\:] 'edit-my-dot-emacs)
 
 ; [?\C-#] == [67108899]
