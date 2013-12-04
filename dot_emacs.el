@@ -23,6 +23,12 @@
 (require 'column-marker)
 (global-undo-tree-mode)
 
+(require 'proof)
+(defun my-proof-general-keys ()
+  (local-set-key (kbd "<C-M-backspace>") 'proof-retract-until-point-interactive)
+  (local-set-key (kbd "<C-M-return>") 'proof-assert-until-point-interactive))
+(add-hook 'proof-mode-hook 'my-proof-general-keys)
+
 ;; Temporarily highlights things like just-yanked text.
 (require 'volatile-highlights)
 (volatile-highlights-mode 1)
