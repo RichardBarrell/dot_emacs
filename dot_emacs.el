@@ -187,7 +187,7 @@
 
 (add-to-list 'backup-directory-alist
              (cons tramp-file-name-regexp nil))
-(setq tramp-auto-save-directory "/home/richardb/.tramp")
+(setq tramp-auto-save-directory (expand-file-name "~/.tramp"))
 
 (require 'fliptext)
 (require 'zenburn)
