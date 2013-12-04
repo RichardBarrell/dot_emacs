@@ -499,18 +499,21 @@ act like (other-window -1)."
 
 (setq inhibit-startup-message t)
 
+(defun cthonic-indentation ()
+  (interactive)
+  (setq c-basic-offset 8)
+  (setq tab-width 8)
+  (setq indent-tabs-mode 't))
 
-(add-hook 'python-mode-hook
-  (lambda ()
-    (setq c-basic-offset 4)
-    (setq tab-width 4)
-    (setq indent-tabs-mode nil)))
+(defun pthonic-indentation ()
+  (interactive)
+  (setq c-basic-offset 4)
+  (setq tab-width 4)
+  (setq indent-tabs-mode nil))
 
-(add-hook 'c-mode-hook
-  (lambda ()
-    (setq c-basic-offset 8)
-    (setq tab-width 8)
-    (setq indent-tabs-mode 't)))
+(add-hook 'python-mode-hook 'pthonic-indentation)
+
+(add-hook 'c-mode-hook 'cthonic-indentation)
 
 (add-hook 'shell-mode-hook (lambda () (setq tab-width 8)))
 
