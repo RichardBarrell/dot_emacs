@@ -3,9 +3,6 @@
 
 (setq load-path (cons (expand-file-name "~/stuff/emacs") load-path))
 
-;(defun my-custom-proof-keys () (interactive)(local-set-key (kbd "C-M-RET") 'proof-assert-until-point-interactive))
-;(add-hook 'proof-mode-hook 'my-custom-proof-keys)
-
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
 (autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
