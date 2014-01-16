@@ -555,6 +555,7 @@ act like (other-window -1)."
  '(js2-rebind-eol-bol-keys nil)
  '(nxml-child-indent 4)
  '(nxml-default-buffer-file-coding-system (quote utf-8))
+ '(proof-splash-enable nil)
  '(py-pychecker-command "/home/RichardB/bin/pychecker")
  '(py-pychecker-command-args (quote ("")))
  '(python-check-command "/home/RichardB/bin/pychecker")
