@@ -21,6 +21,7 @@
 (require 'rainbow-mode)
 (require 'undo-tree)
 (require 'column-marker)
+(require 'web-mode)
 (global-undo-tree-mode)
 
 (require 'proof)
