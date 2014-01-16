@@ -228,8 +228,6 @@
 (defun kill-completions ()
   (interactive)
   (kill-buffer "*Completions*"))
-; Most controversial keybinding thus far:
-(global-set-key "\C-x\C-c" 'kill-completions)
 
 ; this sucks but uh look over there, it's a distraction!
 (defun irc-rainbow (start end)
