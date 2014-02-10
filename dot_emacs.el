@@ -36,7 +36,7 @@
 
 (add-hook 'python-mode-hook
   '(lambda() (progn
-               (local-set-key "\C-c\C-w" 'silent-python-check)
+               (local-set-key (kbd "C-c C-w") 'silent-python-check)
                (local-set-key (kbd "<f7>") 'python-insert-pdb)
               )))
 
@@ -53,7 +53,7 @@
 (defun nop ()
   "nothing"
   (interactive))
-(global-set-key "\C-x\C-g" 'nop)
+(global-set-key (kbd "C-x C-g") 'nop)
 
 ;; ; 't -> copy/paste with primary x11 copy buffer
 (setq x-select-enable-primary 't)
