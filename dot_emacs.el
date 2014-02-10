@@ -24,12 +24,6 @@
 (require 'web-mode)
 (global-undo-tree-mode)
 
-(require 'proof)
-(defun my-proof-general-keys ()
-  (local-set-key (kbd "<C-M-backspace>") 'proof-retract-until-point-interactive)
-  (local-set-key (kbd "<C-M-return>") 'proof-assert-until-point-interactive))
-(add-hook 'proof-mode-hook 'my-proof-general-keys)
-
 ;; Temporarily highlights things like just-yanked text.
 (require 'volatile-highlights)
 (volatile-highlights-mode 1)
@@ -616,3 +610,10 @@ act like (other-window -1)."
  '(rst-level-4-face ((t (:background "grey20"))) t)
  '(rst-level-5-face ((t (:background "grey25"))) t)
  '(rst-level-6-face ((t (:background "grey30"))) t))
+
+(require 'proof)
+(defun my-proof-general-keys ()
+  (local-set-key (kbd "<C-M-backspace>") 'proof-retract-until-point-interactive)
+  (local-set-key (kbd "<C-M-return>") 'proof-assert-until-point-interactive))
+(add-hook 'proof-mode-hook 'my-proof-general-keys)
+
