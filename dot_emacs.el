@@ -55,12 +55,6 @@
 ;; ; 't -> copy/paste with primary x11 copy buffer
 (setq x-select-enable-primary 't)
 
-;; https://github.com/capitaomorte/yasnippet
-;; (setq yas/root-directory "~/stuff/emacs/yasnippets")
-;; (setq yas/trigger-key [\C-,])
-;; (yas/initialize)
-;; (yas/load-directory yas/root-directory)
-
 ;; Show path info in otherwise identical filenames
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
@@ -105,9 +99,6 @@
 (add-hook 'coffee-mode-hook
   '(lambda() (coffee-custom)))
 
-;(require 'haxe-mode)
-;(add-to-list 'auto-mode-alist '("\\.hx$" . haxe-mode))
-
 (require 'ruby-mode)
 (require 'inf-ruby)
 (require 'ri)
@@ -143,10 +134,6 @@
 
 (ispell-minor-mode t)
 
-; (load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
-
-;(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (setq haskell-program-name "/usr/bin/ghci")
 
 (setq-default indent-tabs-mode nil)
@@ -303,9 +290,6 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 
 ; was using espresso-mode for javascript
-;(autoload #'espresso-mode "espresso" "Start espresso-mode" t)
-;(add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
-;(add-to-list 'auto-mode-alist '("\\.json$" . espresso-mode))
 ; js2-mode's indentation is just too fucking braindead
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -391,11 +375,6 @@
   (message "Scary JS2 hook"))
 
 (add-hook 'js2-mode-hook 'my-js2-mode-hook)
-
-;(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
-;(add-hook 'js2-mode-hook 'js2-custom-setup)
-;(defun js2-custom-setup ()
-;  (moz-minor-mode 1))
 
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.cpy$" . python-mode))
@@ -518,16 +497,6 @@ act like (other-window -1)."
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;http://younix.us/cgit/cgit.cgi/dhd.git/tree/hbase/.emacs
-; sprunge.us owns
-;; (defun sprunge (prefix)
-;;   "Posts the current buffer to sprunge, and shows the resulting URL in a new buffer"
-;;   (interactive "P")
-;;   (let ((filename "/tmp/sprunge-post"))
-;;     (if prefix (write-file filename) (write-region (region-beginning) (region-end) filename)) ; if invoked with the universal argument / prefix, upload the whole file, else upload just the region
-;;     (insert (shell-command-to-string (concat "curl -s -F 'sprunge=<" filename "' http://sprunge.us")))
-;;     (delete-char -1))) ; Newline after URL
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -583,18 +552,8 @@ act like (other-window -1)."
 
 (setq default-frame-alist
 	  (alist-insert default-frame-alist 'font-backend "xft"))
-;(setq default-frame-alist
-;	  (alist-insert default-frame-alist 'font "monofur-12"))
-;; (setq default-frame-alist
-;; 	  (alist-insert default-frame-alist 'font "Droid Sans Mono Slashed-10"))
 (setq default-frame-alist
 	  (alist-insert default-frame-alist 'font "Source Code Pro-10:regular"))
-;(setq default-frame-alist
-;	  (alist-insert default-frame-alist 'font "DejaVu Sans Mono-10"))
-
-; (set-face-font 'default "-*-tamzen-medium-*-*-*-15-*-*-*-*-*-*-*")
-
-;(set-face-attribute 'default nil :font "Source Code Pro-10:regular")
 
 ;; On load, zenburn keeps overwriting my custom faces.
 ;; zenburn is loaded asynchronously for some reason.
