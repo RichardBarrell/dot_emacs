@@ -216,7 +216,10 @@
   (interactive)
   (let ((beg (point)))
 	(backward-char)
-	(while (not (member (char-before) '(32 9 10))) (backward-char))
+	(while (not (or
+                     (= 0 (point))
+                     (member (char-before) '(32 9 10))))
+          (backward-char))
 	(kill-region beg (point))))
 
 (defun kill-completions ()
