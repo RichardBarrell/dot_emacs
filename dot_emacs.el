@@ -1,6 +1,3 @@
-;; (find-file "~/.plan")
-;; (org-mode)
-
 (setq load-path (cons (expand-file-name "~/stuff/emacs") load-path))
 
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
@@ -620,4 +617,3 @@ act like (other-window -1)."
   (local-set-key (kbd "<C-M-backspace>") 'proof-retract-until-point-interactive)
   (local-set-key (kbd "<C-M-return>") 'proof-assert-until-point-interactive))
 (add-hook 'proof-mode-hook 'my-proof-general-keys)
-
