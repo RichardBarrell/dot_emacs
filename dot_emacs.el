@@ -169,8 +169,7 @@
 (setq tramp-auto-save-directory (expand-file-name "~/.tramp"))
 
 (require 'fliptext)
-(require 'zenburn)
-(eval-after-load "zenburn" '(zenburn))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (defun zap-spaces ()
   (interactive)
@@ -507,6 +506,7 @@ act like (other-window -1)."
  '(browse-url-browser-function (quote browse-url-generic))
  '(browse-url-generic-program "/usr/bin/chromium-browser" t)
  '(compilation-ask-about-save nil)
+ '(custom-safe-themes (quote ("3c9d994e18db86ae397d077b6324bfdc445ecc7dc81bb9d528cd9bba08c1dac1" default)))
  '(eval-expression-print-length nil)
  '(explicit-shell-file-name "/bin/bash")
  '(indent-tabs-mode nil)
@@ -577,3 +577,5 @@ act like (other-window -1)."
   (local-set-key (kbd "<C-M-backspace>") 'proof-retract-until-point-interactive)
   (local-set-key (kbd "<C-M-return>") 'proof-assert-until-point-interactive))
 (add-hook 'proof-mode-hook 'my-proof-general-keys)
+
+(load-theme 'zenburn)
