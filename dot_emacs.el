@@ -383,6 +383,7 @@
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
 
 (setq browse-url-generic-program (executable-find "firefox")
       browse-url-browser-function 'browse-url-generic)
