@@ -77,6 +77,9 @@
 ; I never hit C-z on purpose.
 (global-unset-key "\C-z")
 
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+
 (require 'magit)
 (global-set-key "\C-xg" 'magit-status)
 
