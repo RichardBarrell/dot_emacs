@@ -18,7 +18,7 @@
 (require 'rainbow-mode)
 (require 'undo-tree)
 (require 'column-marker)
-(require 'web-mode)
+; (require 'web-mode)
 (global-undo-tree-mode)
 
 ;; Temporarily highlights things like just-yanked text.
