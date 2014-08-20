@@ -554,7 +554,7 @@ act like (other-window -1)."
 (setq default-frame-alist
 	  (alist-insert default-frame-alist 'font-backend "xft"))
 (setq default-frame-alist
-	  (alist-insert default-frame-alist 'font "Source Code Pro-10:regular"))
+	  (alist-insert default-frame-alist 'font "Source Code Pro-11:regular"))
 
 ;; On load, zenburn keeps overwriting my custom faces.
 ;; zenburn is loaded asynchronously for some reason.
