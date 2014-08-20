@@ -1,4 +1,8 @@
-(setq load-path (cons (expand-file-name "~/stuff/emacs") load-path))
+(setq load-path
+ (cons (expand-file-name "~/stuff/emacs")
+  (cons (expand-file-name "~/.nix-profile/share/emacs/site-lisp") load-path)))
+
+(require 'nix-mode)
 
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
