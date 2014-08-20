@@ -8,7 +8,6 @@
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
 (autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
 (setq prolog-system 'swi)
-(autoload 'php-mode "php-mode.el" "Php mode." t)
 
 (require 'cl)
 (require 'tls)
@@ -90,7 +89,6 @@
 (require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
 (add-to-list 'auto-mode-alist '("\\.m$" . mercury-mode))
-(add-to-list 'auto-mode-alist '("/*.\.php[345]?$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
 
 (require 'conf-mode)
