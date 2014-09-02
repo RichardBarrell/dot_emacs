@@ -475,6 +475,11 @@ act like (other-window -1)."
 (add-hook 'c-mode-hook 'cthonic-indentation)
 
 (add-hook 'shell-mode-hook (lambda () (setq tab-width 8)))
+(add-hook
+ 'shell-mode-hook
+ (lambda ()
+   (local-set-key (kbd "C-}") 'send-invisible)
+))
 
 (ispell-minor-mode t)
 (setq-default c-basic-offset 4)
