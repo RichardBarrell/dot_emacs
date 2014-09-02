@@ -83,6 +83,7 @@
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
+(require 'git)
 (require 'magit)
 (global-set-key "\C-xg" 'magit-status)
 
