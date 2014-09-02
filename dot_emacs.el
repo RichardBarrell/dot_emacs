@@ -475,10 +475,11 @@ act like (other-window -1)."
 
 (add-hook 'c-mode-hook 'cthonic-indentation)
 
-(add-hook 'shell-mode-hook (lambda () (setq tab-width 8)))
 (add-hook
  'shell-mode-hook
  (lambda ()
+   (setq tab-width 8)
+   (setq ansi-color-for-comint-mode t)
    (local-set-key (kbd "C-}") 'send-invisible)
 ))
 
@@ -486,8 +487,6 @@ act like (other-window -1)."
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
