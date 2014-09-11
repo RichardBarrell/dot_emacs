@@ -21,6 +21,7 @@
 (require 'rainbow-mode)
 (require 'undo-tree)
 (require 'column-marker)
+(load-library "clang-format")
 ; (require 'web-mode)
 (global-undo-tree-mode)
 
@@ -474,6 +475,11 @@ act like (other-window -1)."
 (add-hook 'python-mode-hook 'pthonic-indentation)
 
 (add-hook 'c-mode-hook 'cthonic-indentation)
+
+(add-hook
+ 'c-mode-hook
+ (lambda ()
+   (local-set-key (kbd "C-c c") 'clang-format-region)))
 
 (add-hook
  'shell-mode-hook
