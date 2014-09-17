@@ -243,7 +243,8 @@
 (defun edit-my-dot-emacs ()
   (interactive)
   (find-file (expand-file-name "~/stuff/emacs/dot_emacs.el")))
-(global-set-key [?\C-\:] 'edit-my-dot-emacs)
+(global-set-key (kbd "C-:") 'edit-my-dot-emacs)
+(global-set-key (kbd "C-;") 'toggle-truncate-lines)
 
 ; [?\C-#] == [67108899]
 ; [?\C-|] == [67108988]
