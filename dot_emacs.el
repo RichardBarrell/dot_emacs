@@ -88,6 +88,7 @@
 (require 'magit)
 (global-set-key "\C-xg" 'magit-status)
 
+(require 'rust-mode)
 (require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
 (add-to-list 'auto-mode-alist '("\\.m$" . mercury-mode))
