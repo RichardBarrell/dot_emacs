@@ -471,7 +471,7 @@ act like (other-window -1)."
 (defun pthonic-indentation ()
   (interactive)
   (setq c-basic-offset 4)
-  (setq tab-width 4)
+  (setq tab-width 8)
   (setq indent-tabs-mode nil))
 
 (add-hook 'python-mode-hook 'pthonic-indentation)
