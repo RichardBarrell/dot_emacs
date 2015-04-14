@@ -214,9 +214,17 @@
                     (setq rainbow-list (cdr rainbow-list))))
               (forward-char))))))
 
+(defun circled-number-n (n)
+  (nth n '("⓪" "①" "②" "③" "④" "⑤" "⑥" "⑦" "⑧" "⑨")))
 (defun circled-number (n)
   (interactive "n")
-  (insert (nth n '("⓪" "①" "②" "③" "④" "⑤" "⑥" "⑦" "⑧" "⑨"))))
+  (insert (circled-number-n n)))
+(defun circled-number-at-point ()
+  (interactive)
+  (let
+      ((n (- (following-char) 48)))
+    (delete-char 1)
+    (insert (circled-number-n n))))
 
 ; http://steve.yegge.googlepages.com/effective-emacs :)
 (global-set-key "\C-w"     'backward-kill-more-word)
