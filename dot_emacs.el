@@ -208,11 +208,15 @@
         (loop for i from 0 to (- end start) do
               (if (not (eq (char-after) 32))
                   (progn
-                    (insert "")
+                    (insert "\\x03")
                     (insert (car rainbow-list))
                     (insert ",01")
                     (setq rainbow-list (cdr rainbow-list))))
               (forward-char))))))
+
+(defun circled-number (n)
+  (interactive "n")
+  (insert (nth n '("⓪" "①" "②" "③" "④" "⑤" "⑥" "⑦" "⑧" "⑨"))))
 
 ; http://steve.yegge.googlepages.com/effective-emacs :)
 (global-set-key "\C-w"     'backward-kill-more-word)
@@ -240,6 +244,8 @@
 
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
+(global-set-key [?\C-c ?x] 'recompile)
+(global-set-key [?\C-c ?\M-x] 'compile)
 
 (defun edit-my-dot-emacs ()
   (interactive)
