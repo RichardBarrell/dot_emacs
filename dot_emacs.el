@@ -237,7 +237,7 @@
 (global-set-key "\C-cf"    'flyspell-buffer-or-region)
 (global-set-key "\M-/"     'hippie-expand)
 (global-set-key [?\C-u]    'backward-kill-line)
-(global-set-key [?\C--]    'ucs-insert)
+(global-set-key [?\C--]    'insert-char)
 (global-set-key [?\C-<]    'next-buffer)
 (global-set-key [?\C->]    'previous-buffer)
 (global-set-key [?\M-z]    'zap-up-to-char)
