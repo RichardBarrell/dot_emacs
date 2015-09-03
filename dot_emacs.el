@@ -70,7 +70,7 @@
 ; http://emacs.wordpress.com/2007/01/16/quick-and-dirty-code-folding/
 (defun jao-toggle-selective-display (column)
   (interactive "P")
-  (set-selective-display 
+  (set-selective-display
    (if selective-display nil (or column 1))))
 
 (global-set-key [?\C-.] 'jao-toggle-selective-display)
@@ -362,7 +362,7 @@
   (c-toggle-hungry-state 1)
   (set (make-local-variable 'indent-line-function) 'my-js2-indent-function)
   (define-key js2-mode-map [(meta control |)] 'cperl-lineup)
-  (define-key js2-mode-map [(meta control \;)] 
+  (define-key js2-mode-map [(meta control \;)]
     '(lambda()
        (interactive)
        (insert "/* -----[ ")
