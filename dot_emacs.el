@@ -118,6 +118,10 @@
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
+(require 'erlang)
+; I always want to save when pressing C-c C-k so don't prompt me.
+(add-function :before (symbol-function 'erlang-compile) (lambda () (save-buffer)))
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq require-final-newline t)
 
